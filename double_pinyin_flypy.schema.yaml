@@ -196,7 +196,7 @@ recognizer:
     win_path: "^[A-Za-z]:.*"            # 支持 c:\file\path 之类的路径输入
     colon: "^[A-Za-z]+:.*"              # 上面的超集，可以输入冒号，不会导致句子直接上屏
     underscore: "^[A-Za-z]+_.*"         # 可以输入下划线 _ ，不会导致句子直接上屏
-    # punct: "^v([0-9]|10|[A-Za-z]+)$"  # 响应 symbols_custom.yaml 下的 punctuator/symbols，用「v」替换「/」并支持大写
+    punct: "^V([0-9]|10|[A-Za-z]+)$"  # 响应 symbols_custom.yaml 下的 punctuator/symbols，用「v」替换「/」并支持大写
     reverse_lookup: '^L[a-z]+$'         # 响应两分的反查
     unicode: "^U[a-f0-9]+"              # 响应 Unicode
 
