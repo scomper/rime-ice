@@ -5,3 +5,5 @@ patch:
 # V+字母快速查询
   "recognizer/patterns/+": 
     punct: "^V([0-9]|10|[A-Za-z]+)$"  # 响应 symbols_custom.yaml 下的 punctuator/symbols，用「v」替换「/」并支持大写
+# 输入双拼码的时候不转化为全拼码
+  "translator/preedit_format": {}     # 输入双拼码的时候不转化为全拼码
