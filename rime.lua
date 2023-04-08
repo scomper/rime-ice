@@ -1,4 +1,5 @@
--- Rime lua 扩展：https://github.com/hchunhui/librime-lua
+-- Rime Lua 扩展 https://github.com/hchunhui/librime-lua
+-- 文档 https://github.com/hchunhui/librime-lua/wiki/Scripting
 -------------------------------------------------------------
 -- 日期时间
 -- 提高权重的原因：因为在方案中设置了大于 1 的 initial_quality，导致 rq sj xq dt ts 产出的候选项在所有词语的最后。
@@ -198,17 +199,19 @@ function reduce_english_filter(input, env)
     -- filter start
     local code = env.engine.context.input
     if env.words[code] then
-        local first_cand
+        local pending_cands = {}
         local index = 0
         for cand in input:iter() do
             index = index + 1
-            if first_cand then
-                yield(cand)
+            if string.lower(cand.text) == code then
+                table.insert(pending_cands, cand)
             else
-                first_cand = cand
+                yield(cand)
             end
-            if index >= env.idx then
-                yield(first_cand)
+            if index >= env.idx + #pending_cands - 1 then
+                for _, cand in ipairs(pending_cands) do
+                    yield(cand)
+                end
                 break
             end
         end
@@ -223,6 +226,7 @@ end
 -- v 模式，单个字符优先
 -- 因为设置了英文翻译器的 initial_quality 大于 1，导致输入「va」时，候选项是「van vain …… ā á ǎ à」
 -- 把候选项应改为「ā á ǎ à …… van vain」，让单个字符的排在前面
+-- 感谢改进 @[t123yh](https://github.com/t123yh) @[Shewer Lu](https://github.com/shewer)
 function v_filter(input, env)
     local code = env.engine.context.input -- 当前编码
     env.v_spec_arr = env.v_spec_arr or Set(
