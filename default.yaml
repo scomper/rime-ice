@@ -14,12 +14,12 @@ schema_list:
   - schema: rime_ice
   - schema: double_pinyin
   - schema: double_pinyin_flypy
+  - schema: double_pinyin_mspy
 
 
 # 菜单
 menu:
   page_size: 5  # 候选词个数
-  # 好像只有鼠须管支持的属性：
   # alternative_select_labels: [ ①, ②, ③, ④, ⑤, ⑥, ⑦, ⑧, ⑨, ⑩ ]  # 修改候选项标签
   # alternative_select_keys: ASDFGHJKL  # 如编码字符占用数字键，则需另设选字键
 
@@ -179,7 +179,7 @@ key_binder:
 # Cancel	取消
 # Help	帮助
 # Break	中断
-# space
+# space	空格
 # exclam	!
 # quotedbl	"
 # numbersign	#
@@ -203,7 +203,7 @@ key_binder:
 # question	?
 # at	@
 # bracketleft	[
-# backslash	
+# backslash	\
 # bracketright	]
 # asciicircum	^
 # underscore	_
