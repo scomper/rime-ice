@@ -7,7 +7,7 @@
 #
 ---
 name: cn_en_double
-version: "2023-04-05"
+version: "2023-04-11"
 sort: by_weight
 ...
 X光	Xgl
@@ -459,3 +459,5 @@ DJ舞曲	DJwuqu
 就OK	jqOK
 不OK	buOK
 很OK	hfOK
+Chromium系	Chromiumxi
+Chrome系	Chromexi
