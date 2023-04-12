@@ -218,8 +218,8 @@ recognizer:
 
 # 从 default 继承快捷键
 key_binder:
-  import_preset: default # 从 default.yaml 继承通用的
-  # bindings:            # 也可以再增加方案专有的
+  import_preset: default
+  # bindings: # 也可以再增加方案专属的快捷键
 
 
 # 拼写设定
