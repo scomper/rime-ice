@@ -925,3 +925,4 @@ B型血	bxk
 O型血	oxk
 K歌	kge
 X光	xgl
+AutoGPT	autogpt
