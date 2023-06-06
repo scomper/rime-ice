@@ -7,7 +7,7 @@
 #
 ---
 name: en_ext
-version: "2023-06-03"
+version: "2023-06-06"
 sort: by_weight
 ...
 # 一些杂项
@@ -124,10 +124,10 @@ Phoebe	Phoebe
 
 # 带权重的系列
 iPhone	iPhone	999
-iPhone 14	iPhone	4
-iPhone 14 Plus	iPhone	3
-iPhone 14 Pro	iPhone	2
-iPhone 14 Pro Max	iPhone	1
+iPhone 14	iPhone14	4
+iPhone 14 Plus	iPhone14Plus	3
+iPhone 14 Pro	iPhone14Pro	2
+iPhone 14 Pro Max	iPhone14ProMax	1
 iPhone SE	iPhoneSE
 
 Mac OS X	MacOSX	999
@@ -166,6 +166,7 @@ macOS Catalina	macOS	4
 macOS Big Sur	macOS	5
 macOS Monterey	macOS	6
 macOS Ventura	macOS	7
+macOS Sonoma	macOS	8
 macOS Sierra	macOSSierra
 macOS High Sierra	macOSHighSierra
 macOS Mojave	macOSMojave
@@ -173,6 +174,7 @@ macOS Catalina	macOSCatalina
 macOS Big Sur	macOSBigSur
 macOS Monterey	macOSMonterey
 macOS Ventura	macOSVentura
+macOS Sonoma	macOSSonoma
 Sierra	Sierra
 High Sierra	HighSierra
 Mojave	Mojave
@@ -180,23 +182,24 @@ Catalina	Catalina
 Big Sur	BigSur
 Monterey	Monterey
 Ventura	Ventura
+Sonoma	Sonoma
 
 Windows	Windows	999
-Windows 95	Windows	1
-Windows 98	Windows	2
+Windows 95	Windows95	1
+Windows 98	Windows98	2
 Windows Me	Windows	3
-Windows 2000	Windows	4
+Windows 2000	Windows2000	4
 Windows XP	Windows	5
 Windows XP	WindowsXP
-Windows Vista	Windows	6
-Windows 7	Windows	7
-Windows 8	Windows	8
-Windows 10	Windows	10
-Windows 11	Windows	11
+Windows Vista	WindowsVista	6
+Windows 7	Windows7	7
+Windows 8	Windows8	8
+Windows 10	Windows10	10
+Windows 11	Windows11	11
 
-ERC-20	ERC
-ERC-721	ERC
-ERC-1155	ERC
+ERC-20	ERC-20
+ERC-721	ERC-721
+ERC-1155	ERC-1155
 
 
 # +_+
@@ -281,10 +284,10 @@ Secure Shell	SSH
 Secure Shell	SecureShell
 ISO	ISO
 International Organization for Standardization	ISO
-ISO 8601	ISO
+ISO 8601	ISO8601
 RFC	RFC
 Request for Comments	RFC
-RFC 3339	RFC
+RFC 3339	RFC3339
 RFCs	RFCs
 IETF	IETF
 Internet Engineering Task Force	IETF
@@ -347,7 +350,6 @@ CentOS	CentOS
 Debian	Debian
 BBC	BBC
 DataGrip	DataGrip
-Alpha	Alpha
 AlphaGo	AlphaGo
 AlphaFold	AlphaFold
 Valve	Valve
@@ -412,6 +414,9 @@ Xbox Series	XboxSeries
 Xbox Series S	XboxSeriesS
 Switch	Switch
 CSS	CSS
+Cascading Style Sheets	CSS
+Cascading Style Sheets	CascadingStyleSheets
+cascading	cascading
 ID	ID
 OTC	OTC
 IEPL	IEPL
@@ -434,12 +439,8 @@ VIP	VIP
 D.VA	DVA
 Logo	Logo
 Telnet	Telnet
-IPv4	IPv
-IPv6	IPv
-IPv4	IPvs
-IPv6	IPvl
-IPv4	IPvsi
-IPv6	IPvliu
+IPv4	IPv4
+IPv6	IPv6
 Unix	Unix
 Rick and Morty	RickandMorty
 Tokyo	Tokyo
@@ -485,7 +486,6 @@ Hugo	Hugo
 Epic	Epic
 Epic Games	EpicGames
 Instagram	Instagram
-Beta	Beta
 archive	archive
 Evernote	Evernote
 PDF	PDF
@@ -498,7 +498,6 @@ Gitea	Gitea
 GitBook	GitBook
 Gboard	Gboard
 Access	Access
-Bug	Bug
 BMW	BMW
 Bayerische Motoren Werke AG	BMW
 BGM	BGM
@@ -518,7 +517,6 @@ Flask	Flask
 Facebook	Facebook
 Firefox	Firefox
 Git	Git
-Go	Go
 GoLand	GoLand
 Golang	Golang
 IQOS	IQOS
@@ -551,7 +549,6 @@ Roguelike	Roguelike
 Redis	Redis
 Rime	Rime
 RION	RION
-Rust	Rust
 segmentfault	segmentfault
 SPA	SPA
 SQL	SQL
@@ -560,11 +557,9 @@ Structured Query Language	StructuredQueryLanguage
 SQLite	SQLite
 Sourcetree	Sourcetree
 Spiritfarer	Spiritfarer
-TCP/IP	tcpip
+TCP/IP	TCP/IP
 Twitter	Twitter
-V2EX	Ver
-V2EX	VerEX
-V2EX	VtoEX
+V2EX	V2EX
 VSCode	VSCode
 Vue	Vue
 Vue.js	Vuejs
@@ -573,7 +568,7 @@ Web	Web
 WebStorm	WebStorm
 Word	Word
 Xcode	Xcode
-Emoji	Emoji
+emoji	emoji
 exe	exe
 gakki	gakki
 hey	hey
@@ -590,9 +585,6 @@ Graphics Interchange Format	GIF
 DNS	DNS
 Domain Name System	DNS
 Domain Name System	DomainNameSystem
-Mod	Mod
-Yes	Yes
-No	No
 RimWorld	RimWorld
 Factorio	Factorio
 Game Boy	GameBoy
@@ -671,7 +663,6 @@ Developer Preview	DeveloperPreview
 DEVONthink	DEVONthink
 Disk Utility	DiskUtility
 Diumoo	Diumoo
-Dock	Dock
 Dropbox	Dropbox
 Dropzone	Dropzone
 Endnote	Endnote
@@ -685,7 +676,6 @@ Fantastical	Fantastical
 FileVault	FileVault
 Final Cut Pro	FinalCutPro
 Flickr	Flickr
-Flux	Flux
 Force Touch	ForceTouch
 Forecast	Forecast
 ForkLift	ForkLift
@@ -771,10 +761,8 @@ MIPS	MIPS
 Moke	Moke
 Moneywiz	Moneywiz
 Moom	Moom
-MP3	MPs
-MP3	MPsan
-MP4	MPs
-MP4	MPsi
+MP3	MP3
+MP4	MP4
 MplayerX	MplayerX
 Netflix	Netflix
 Noizio	Noizio
@@ -851,7 +839,6 @@ StackSocial	StackSocial
 Sublime Text	SublimeText
 Surge	Surge
 Symbol	Symbol
-Tag	Tag
 TechWeb	TechWeb
 Telegram	Telegram
 Terminal	Terminal
@@ -861,14 +848,11 @@ Textastic	Textastic
 TextExpander	TextExpander
 TextWrangler	TextWrangler
 The Unarchiver	TheUnarchiver
-Things	Things
-Thunder	Thunder
 Thunderbird	Thunderbird
 Time Capsule	TimeCapsule
 Timing	Timing
 TinkerTool	TinkerTool
 Touch ID	TouchID
-Tower	Tower
 Trello	Trello
 Tumblr	Tumblr
 tvOS	tvOS
@@ -885,7 +869,6 @@ Universal Serial Bus	UniversalSerialBus
 Versions	Versions
 VPN	VPN
 virtual private network	VPN
-Watch	Watch
 watchOS	watchOS
 Wi-Fi	waifai
 Wi-Fi	WiFi
@@ -985,13 +968,9 @@ Stack Overflow	StackOverflow
 PyWebIO	PyWebIO
 Launchpad	Launchpad
 Squoosh	Squoosh
-Win	Win
 cosplay	cosplay
 Gravatar	Gravatar
-Max	Max
-Copilot	Copilot
 copilot	copilot
-Fleet	Fleet
 Xshell	Xshell
 Nokia	Nokia
 OCR	OCR
@@ -1019,11 +998,9 @@ Darwin	Darwin
 NAS	NAS
 Network Attached Storage	NAS
 Network Attached Storage	NetworkAttachedStorage
-Fork	Fork
 CommonMark	CommonMark
 Goldmark	Goldmark
 blackFriday	blackFriday
-Online	Online
 One UI	OneUI
 Raycast	Raycast
 CloudFront	CloudFront
@@ -1046,7 +1023,6 @@ PaperMod	PaperMod
 Vercel	Vercel
 chore	chore
 chores	chores
-SWAG	SWAG
 swag	swag
 CS	CS
 Counter-Strike	CS
@@ -1071,8 +1047,6 @@ Gecko	Gecko
 Omicron	Omicron
 TinyPNG	TinyPNG
 Thanos	Thanos
-Byte	Byte
-bytes	bytes
 XML	XML
 Extensible Markup Language	XML
 Extensible Markup Language	ExtensibleMarkupLanguage
@@ -1084,14 +1058,13 @@ Baiduspider	Baiduspider
 Bingbot	Bingbot
 SogouSpider	SogouSpider
 YoudaoBot	YoudaoBot
-SWAT	SWAT
+swat	swat
 footer	footer
 header	header
 GitHub Copilot	GitHubCopilot
 GitHub Copilot X	GitHubCopilotX
 GitHub Copilot CLI	GitHubCopilotCLI
 GitHub Copilot chat	GitHubCopilotchat
-Blog	Blog
 iPadOS	iPadOS
 Apple Pencil	ApplePencil
 Reddit	Reddit
@@ -1125,7 +1098,7 @@ Shottr	Shottr
 turbo	turbo
 Turbo Boost	TurboBoost
 Turbo Boost Switcher	TurboBoostSwitcher
-P2P	ptop
+P2P	P2P
 OPPO	OPPO
 vivo	vivo
 Uno	Uno
@@ -1152,7 +1125,6 @@ GNU General Public License	GNU
 GNU General Public License	GNUGeneralPublicLicense
 GPL	GPL
 GNU General Public License	GPL
-Brave	Brave
 iPhone X	iPhoneX
 iPhone XS	iPhoneXS
 iPhone XS Max	iPhoneXSMax
@@ -1163,11 +1135,11 @@ Minions	Minions
 Rush B	RushB
 Rush A	RushA
 AK	AK
-AK47	AK
-AK74	AK
+AK47	AK47
+AK74	AK74
 Mastercard	Mastercard
 COVID	COVID
-COVID-19	COVID
+COVID-19	COVID-19
 Wallpaper Engine	WallpaperEngine
 Erlang	Erlang
 FAQ	FAQ
@@ -1211,9 +1183,9 @@ NULL	NULL
 Slice	Slice
 Map	Map
 Mojito	Mojito
-Bob	Bob
 Toolbox	Toolbox
 Weasel	Weasel
+weasel	weasel
 Niconico	Niconico
 TickTick	TickTick
 CHDBits	CHDBits
@@ -1403,7 +1375,7 @@ PHP	PHP
 Hypertext Preprocessor	PHP
 Hypertext Preprocessor	HypertextPreprocessor
 cannot	cannot
-Duang	Duang
+duang	duang
 placeholder	placeholder
 Pythonic	Pythonic
 redefine	redefine
@@ -1644,18 +1616,16 @@ Mac	Mac
 LCD	LCD
 DVD	DVD
 CD	CD
-Bluetooth	Bluetooth
 eSIM	eSIM
 UTF	UTF
-UTF-8	UTF
+UTF-8	UTF-8
+UTF-16	UTF-16
 ASCII	ASCII
 ANSI	ANSI
 IEEE	IEEE
 Institute of Electrical and Electronics Engineers	IEEE
 DjVu	DjVu
 LaTeX	LaTeX
-Wire	Wire
-Guard	Guard
 API	API
 Application Programming Interface	API
 Ethernet	Ethernet
@@ -1670,7 +1640,8 @@ RNA	RNA
 ribonucleic acid	RNA
 mRNA	mRNA
 messenger RNA	mRNA
-C++	cpp
+C++	Cpp
+C++	C++
 Python	Python
 Perl	Perl
 Swift	Swift
@@ -1969,8 +1940,6 @@ GoFrame	GoFrame
 ORM	ORM
 Object Relational Mapping	ORM
 Gin	Gin
-Echo	Echo
-Iris	Iris
 iris	iris
 burnt	burnt
 KPI	KPI
@@ -2010,7 +1979,6 @@ rune	rune
 wick	wick
 meow	meow
 woof	woof
-Bromite	Bromite
 bromite	bromite
 Zelda	Zelda
 hutch	hutch
@@ -2066,8 +2034,8 @@ WWII	WWII
 World War II	WWII
 WWIII	WWIII
 World War III	WWIII
-PL/pgSQL	PLpgSQL
-Procedural Language / PostGres Structured Query Language	PLpgSQL
+PL/pgSQL	PL/pgSQL
+Procedural Language / PostGres Structured Query Language	PL/pgSQL
 IQ	IQ
 Intelligence quotient	IQ
 quotient	quotient
@@ -2220,3 +2188,12 @@ pranksters	pranksters
 npm	npm
 Node Package Manager	npm
 Node Package Manager	NodePackageManager
+Apple Vision	AppleVision
+Apple Vision Pro	AppleVisionPro
+Vision Pro	VisionPro
+shithead	shithead
+i18n	i18n
+internationalization	i18n
+GPT-4	GPT-4
+a11y	a11y
+accessibility	a11y
