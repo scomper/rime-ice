@@ -8,7 +8,7 @@
 #
 ---
 name: others
-version: "2023-08-07"
+version: "2023-08-10"
 sort: by_weight
 ...
 ##### 容错词
@@ -109,6 +109,16 @@ sort: by_weight
 荨麻	xun ma
 荨麻疹	xun ma zhen
 荨麻疹	qian ma zhen
+模具	mu ju
+模具	mo ju
+草薙	cao ti
+草薙	cao zhi
+草薙京	cao ti jing
+草薙京	cao zhi jing
+草薙剑	cao ti jian
+草薙剑	cao zhi jian
+贾平凹	jia ping wa
+贾平凹	jia ping ao
 # 错字
 曾经	ceng jing
 曾今	ceng jin
