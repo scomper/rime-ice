@@ -1,6 +1,11 @@
 # weasel.yaml 支持的所有选项及注释，用于配置参考
+# 感谢 @[Mirtle](https://github.com/mirtlecn) 整理
+# 定制化文档 https://github.com/rime/weasel/wiki/Weasel-定製化
+# 字体设定文档 https://github.com/rime/weasel/wiki/字體設定
 
-# 小狼毫会在更换配色时将 weasel.custom.yaml 内容格式化，删除所有注释并调整格式。建议的自定义方法是：复制本文件并修改，之后在 weasel.custom.yaml 用 `__include` 引入。示例 weasel.custom.yaml 如下：
+
+# 小狼毫会在更换配色时将 weasel.custom.yaml 内容格式化，删除所有注释并调整格式。
+# 建议的自定义方法是：复制此本文件并修改，之后在 weasel.custom.yaml 用 `__include` 引入。示例 weasel.custom.yaml 如下：
 # patch:
 #   "preset_color_schemes/+"
 #     __include: "weasel_style_copy:/preset_color_schemes"
@@ -18,7 +23,7 @@ style:
   # 字体1[:起始码位:结束码位:字重:字形][,字体2 ...]，例如：
   # "Segoe UI Emoji:20:39:bold:italic, Noto Color Emoji SVG:80, Arial:600:6ff, Segoe UI Emoji:80, LXGW Wenkai Narrow"
   # 字体会依次 fallback
-  font_face: "Segoe UI Emoji:80, Microsoft YaHei" # 默认字体。为了保证部分 emoji 能正常显示，建议将 emoji 字体放在首位，并指定起始码位防止影响其他字符。refer <https://github.com/rime/weasel/issues/932>
+  font_face: "Segoe UI Emoji, Microsoft YaHei" # 默认字体。为了保证部分 emoji 能正常显示，建议将 emoji 字体放在首位，并指定起始码位防止影响其他字符。refer <https://github.com/rime/weasel/issues/932>
   label_font_face: "Microsoft YaHei" # 标签字体
   comment_font_face: "Microsoft YaHei" # 注释字体
   font_point: 14 # 默认字体大小
