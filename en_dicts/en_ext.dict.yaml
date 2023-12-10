@@ -7,7 +7,7 @@
 #
 ---
 name: en_ext
-version: "2023-11-29"
+version: "2023-12-08"
 sort: by_weight
 ...
 # 一些杂项
@@ -432,7 +432,6 @@ WYSIWYG	WYSIWYG
 What You See Is What You Get	WYSIWYG
 Mark Text	MarkText
 Joplin	Joplin
-obsidian	obsidian
 SteamOS	SteamOS
 TikTok	TikTok
 IDC	IDC
@@ -2265,7 +2264,6 @@ medallion	medallion
 add-on	add-on
 add-ons	add-ons
 C#	C#
-C#	Csharp
 decode	decode
 KeyCastr	KeyCastr
 Laugh Tale	LaughTale
@@ -2380,3 +2378,9 @@ silicones	silicones
 GPTs	GPTs
 sider	sider
 DALL·E	DALL·E
+keychain	keychain
+keychains	keychains
+guile	guile
+e.g.	e.g.
+i.e.	i.e.
+et al.	etal.
