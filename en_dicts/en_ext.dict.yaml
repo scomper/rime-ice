@@ -7,7 +7,7 @@
 #
 ---
 name: en_ext
-version: "2024-01-14"
+version: "2024-01-28"
 sort: by_weight
 ...
 # 一些杂项
@@ -587,14 +587,13 @@ MongoDB	MongoDB
 MySQL	MySQL
 Node.js	Node.js
 Pornhub	Pornhub
-PostgreSQL	PostgreSQL
 Postgres	Postgres
 PowerPoint	PowerPoint
 PPT	PPT
 PowerPoint	PPT
 Microsoft PowerPoint	PPT
 PyCharm	PyCharm
-Roguelike	Roguelike
+roguelike	roguelike
 Redis	Redis
 rime	rime
 RION	RION
@@ -1944,6 +1943,7 @@ Aquarius	Aquarius
 Pisces	Pisces
 tailwind	tailwind
 Fcitx	Fcitx
+Fcitx5	Fcitx5
 openSUSE	openSUSE
 defer	defer
 FOMO	FOMO
@@ -2199,6 +2199,7 @@ Loki	Loki
 panzer	panzer
 hardened	hardened
 motherfucker	motherfucker
+motherfuckers	motherfuckers
 motherfucking	motherfucking
 dict	dict
 latte	latte
@@ -2403,3 +2404,26 @@ Melvor Idle	MelvorIdle
 paradise	paradise
 ketchup	ketchup
 pinning	pinning
+WebSocket	WebSocket
+systemctl	systemctl
+reconfig	reconfig
+sudo	sudo
+flypy	flypy
+traefik	traefik
+deepin	deepin
+Arch Linux CN	ArchLinuxCN
+srv	srv
+usr	usr
+bin	bin
+AUR	AUR
+Arch User Repository	AUR
+pacman	pacman
+Pac-Man	Pac-Man
+eBPF	eBPF
+livid	livid
+DevOps	DevOps
+Zippo	Zippo
+goddamn	goddamn
+punctuator	punctuator
+punctuators	punctuators
+QR code	QRcode
