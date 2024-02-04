@@ -32,7 +32,7 @@ switches:
     reset: 1
   - name: full_shape
     states: [ 半角, 全角 ]
-  - name: single_char  # search.lua 的功能开关，辅码查词时是否单字优先
+  - name: search_single_char  # search.lua 的功能开关，辅码查词时是否单字优先
     abbrev: [词, 单]
     states: [正常, 单字]
 
@@ -64,6 +64,7 @@ engine:
     - lua_translator@lunar              # 农历
     - table_translator@custom_phrase    # 自定义短语 custom_phrase.txt
     - table_translator@melt_eng         # 英文输入
+    - table_translator@cn_en            # 中英混合词汇
     - table_translator@radical_lookup   # 部件拆字反查
     - lua_translator@unicode            # Unicode
     - lua_translator@number_translator  # 数字、金额大写
@@ -146,22 +147,22 @@ pin_cand_filter:
   # 单编码
   - q	去 千
   - w	我 万 往
-  - e	呃
+  - e	呃 🤔
   - r	让 人
   - t	他 她 它 祂
   - y	与 于
   # - u 在 custom_phrase 置顶
   # - i 在 custom_phrase 置顶
-  - o	哦
+  - o	哦 😮
   - p	片 篇
-  - a	啊
+  - a	啊 😲 😦 😧
   - s	是 时 使 式
   - d	的 地 得
   - f	发 放 分
   - g	个 各
   - h	和 或
   - j	及 将 即 既 继
-  - k	可
+  - k	可 🉑
   - l	了 啦 喽 嘞
   - z	在 再 自
   - x	想 像 向
@@ -170,12 +171,12 @@ pin_cand_filter:
   - b	吧 把 呗 百
   - n	那 哪 拿 呐
   - m	吗 嘛 呣
-  # 单字
+  # 常用单字
   - qing	请
   - qu	去
   - wo	我
   - wei	为
-  - er	而 儿 二
+  - er	而 儿 二 2️⃣
   - en	嗯
   - rang	让
   - ta	他 她 它 祂
@@ -186,12 +187,16 @@ pin_cand_filter:
   - yao	要
   - ye	也
   - shi	是 时 使 式
+  - suo	所
+  - shang	上 ⬆️ ↑
+  - shuo	说
   - de	的 地 得
   - dan	但
+  - dou	都
   - dao	到 倒
-  - dian	点
+  - dian	点 · 丶
   - dang	当
-  - dui	对
+  - dui	对 ⭕ ✅ ✔
   - fa	发
   - ge	个 各
   - gang	刚
@@ -199,12 +204,12 @@ pin_cand_filter:
   - huo	或
   - hui	会
   - hai	还
-  - hao	好
+  - hao	好 👌 🙆‍♂️ 🙆‍♀️
   - ji	及 即 既
   - jiu	就
   - jiang	将
-  - ke	可
-  - kan	看
+  - ke	可 🉑
+  - kan	看 👀
   - kai	开
   - le	了
   - la	啦 拉
@@ -216,11 +221,11 @@ pin_cand_filter:
   - zhen	真
   - zui	最
   - zheng	正
-  - zuo	做 坐 左
+  - zuo	做 坐 左 ⬅️ ←
   - ze	则
   - xiang	想 像 向
   - xian	先
-  - xia	下
+  - xia	下 ⬇️ ↓
   - xing	行
   - cai	才
   - cong	从
@@ -232,18 +237,20 @@ pin_cand_filter:
   - bie	别
   - bi	比
   - bing	并
-  - na	那 哪 拿
+  - na	那 哪 拿 呐
   - ni	你
   - ma	吗 嘛 妈
   - mei	没
+  - mai	买 卖
   # ta、na
   - ta men	他们 她们 它们
   - tm	他们 她们 它们
   - ta de	他的 她的 它的
+  - td	他的 她的 它的
   - ta men de	他们的 她们的 它们的
   - na er	那儿 哪儿
   - na ge	那个 哪个
-  - ng	那个 哪个
+  - ng	那个 哪个 拿个
   - na xie	那些 哪些
   - na li	那里 哪里
   - na bian	那边 哪边
@@ -294,6 +301,18 @@ melt_eng:
   initial_quality: 1.1     # 初始权重
   comment_format:          # 自定义提示码
     - xform/.*//           # 清空提示码
+
+
+# 中英混合词汇
+cn_en:
+  dictionary: ""
+  user_dict: en_dicts/cn_en
+  db_class: stabledb
+  enable_completion: true
+  enable_sentence: false
+  initial_quality: 1.1
+  comment_format:
+    - xform/^.+$//
 
 
 # 自定义短语：custom_phrase.txt
