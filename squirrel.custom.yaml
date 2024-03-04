@@ -6,7 +6,7 @@ patch:
   style/translucency: true
   style/alpha: 0.9
   style/shadow_size: 5                        # 以指定所选候选项下的阴影。默认为 0 ，无阴影。
-  style/mutual_exclusive: ture                # true / false 以允许颜色不重叠，并具有更大的透明度灵活性。默认为 false 
+  style/mutual_exclusive: true                # true / false 以允许颜色不重叠，并具有更大的透明度灵活性。默认为 false 
   preset_color_schemes:
     Dawn:
       author: "scomper <scomper@gmail.com>"   # 作者信息
