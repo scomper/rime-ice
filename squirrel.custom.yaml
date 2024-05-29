@@ -33,8 +33,8 @@ patch:
       label_font_face: "SFCompactText-Regular"# 候选词编号字体
       corner_radius: 6                        # 候选条圆角
       hilited_corner_radius: 4                # 高亮圆角
-      border_height: 4                        # 窗口边界高度，大于圆角半径才生效
-      border_width: 4                         # 窗口边界宽度，大于圆角半径才生效
+#      border_height: 4                        # 窗口边界高度，大于圆角半径才生效
+#      border_width: 4                         # 窗口边界宽度，大于圆角半径才生效
 
     mritd_dark:
       # https://mritd.me/2019/03/23/oh-my-rime/
@@ -47,8 +47,8 @@ patch:
       candidate_format: "%c\u2005%@ \u2005"     # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
       corner_radius: 6                          # 候选条圆角
       hilited_corner_radius: 4                  # 高亮圆角
-      border_height: 4                          # 窗口边界高度，大于圆角半径才生效
-      border_width: 4                           # 窗口边界宽度，大于圆角半径才生效
+#      border_height: 4                          # 窗口边界高度，大于圆角半径才生效
+#      border_width: 4                           # 窗口边界宽度，大于圆角半径才生效
       border_color_width: 0
       font_face: "思源黑体"                      # 候选词字体
       font_point: 16                            # 候选字词大小
