@@ -23,7 +23,7 @@ style:
 
   # Deprecated since 0.36, Squirrel 0.15
   #horizontal: false
-  candidate_list_layout: linear  # stacked | linear
+  candidate_list_layout: stacked  # stacked | linear
   text_orientation: horizontal  # horizontal | vertical
   inline_preedit: true
   # Whether to embed selected candidate as text in input field
