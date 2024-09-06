@@ -16,9 +16,9 @@ patch:
     - uniquifier
 
   # 长词优先设置为提升 10 个词到第 1 个位置
-  long_word_filter:
-    count: 10
-    idx: 1
+  #long_word_filter:
+  #  count: 10
+  #  idx: 1
 
   # 双拼不转换为全拼编码
   translator/preedit_format: []
