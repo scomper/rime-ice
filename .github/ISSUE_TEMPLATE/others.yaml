@@ -1,6 +1,5 @@
 name: 想法、求助和提议
 description: 我有一些想法和建议；或是一些不理解的地方想要求助
-title: '请问：'
 
 body:
   - type: input
@@ -13,11 +12,11 @@ body:
   - type: input
     id: app_version
     attributes:
-      label: 应用信息
-      description: 如果必要，请提供你使用的 RIME 前端和版本号
+      label: 相关应用
+      description: 这个议题涉及的（你在使用的）RIME 前端和版本号
       placeholder: 例如：Squirrel 1.0.2 / Fcitx5 for Android 0.9 / Weasel 15.0
     validations:
-      required: false
+      required: true
   - type: textarea
     id: content
     attributes:
