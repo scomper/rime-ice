@@ -1,33 +1,52 @@
 # Squirrel settings
 # encoding: utf-8
+#
+# squirrel[.custom].yaml 是鼠须管的前端配置文件，小狼毫是 weasel[.custom].yaml
+# 各平台皮肤配置并不一致。
+#
+# 鼠须管内置皮肤展示： https://github.com/NavisLab/rime-pifu
+# 鼠须管界面配置指南： https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/鼠鬚管介面配置指南.md
+# 鼠须管作者写的图形化的皮肤设计器： https://github.com/LEOYoon-Tsaw/Squirrel-Designer
 
-config_version: '1.0'
+
+# 要比共享目录的同名文件的 config_version 大才可以生效
+config_version: '2024-11-04'  # config_version: '1.0'
+
 
 # options: last | default | _custom_
 # last: the last used latin keyboard layout
 # default: US (ABC) keyboard layout
 # _custom_: keyboard layout of your choice, e.g. 'com.apple.keylayout.USExtended' or simply 'USExtended'
 keyboard_layout: last
-
 # for veteran chord-typist
 chord_duration: 0.1  # seconds
-
 # options: always | never | appropriate
 show_notifications_when: appropriate
 
-style:
-  color_scheme: native
-  # Optional: define both light and dark color schemes to match system appearance
-  #color_scheme: solarized_light
-  #color_scheme_dark: solarized_dark
 
-  # Deprecated since 0.36, Squirrel 0.15
-  #horizontal: false
-  candidate_list_layout: stacked  # stacked | linear
-  text_orientation: horizontal  # horizontal | vertical
-  inline_preedit: true
-  # Whether to embed selected candidate as text in input field
-  inline_candidate: false
+# ascii_mode、inline、no_inline、vim_mode 等等设定
+# 可参考 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/squirrel.yaml
+app_options:
+  # com.apple.Spotlight:
+  #   ascii_mode: true    # 开启默认英文
+  # com.microsoft.VSCode:
+  #   ascii_mode: false   # 关闭默认英文
+
+
+style:
+  # 选择皮肤，亮色与暗色主题
+  color_scheme: purity_of_form_custom
+  color_scheme_dark: purity_of_form_custom
+
+  # 以下是预设选项。如果皮肤没写，则使用这些属性；如果皮肤写了，使用皮肤的。
+
+  # 候选框与文字的排列方式
+  candidate_list_layout: stacked  # stacked | linear       皮肤横竖排显示是调整这个
+  text_orientation: horizontal    # horizontal | vertical  文字方向
+  # 拼音或词句是否显示在键入位置
+  inline_preedit: true     # true | false  键入码显示位置
+  inline_candidate: false  # true | false  选中词显示位置
+
   # Whether candidate panel stick to screen edge to reduce jumping
   memorize_size: true
   # Whether transparent colors stack on each other
@@ -52,18 +71,67 @@ style:
   # format using %@ and %c is deprecated since 1.0, Squirrel 1.0
   # %@ is automatically expanded to "[candidate] [comment]"
   # and %c is replaced by "[label]"
-  candidate_format: '[label]. [candidate] [comment]'
+  candidate_format: '[label]. [candidate] [comment]'  # 候选项格式化
 
-  # adjust the base line of vertical text
+  # adjust the base line of text
   #base_offset: 0
   font_face: 'Avenir'
-  font_point: 15
+  font_point: 16
   #label_font_face: 'Avenir'
-  label_font_point: 12
+  #label_font_point: 12
   #comment_font_face: 'Avenir'
-  comment_font_point: 15
+  #comment_font_point: 16
 
+
+# 皮肤列表
 preset_color_schemes:
+  # 对 purity_of_form 略微调整颜色，让色彩更柔和点，补全其他选项和注释
+  purity_of_form_custom:
+    name: "純粹的形式／Purity of Form Custom"
+    author: 雨過之後、佛振
+    # 如果将字体设置为 PingFangSC-Regular
+    # 会让 🈶🈚️🉑🈲🉐 这几个 Emoji 失去彩色效果，留空反而可以显示。。。
+    font_face: ""                   # 字体及大小
+    font_point: 18
+    label_font_face: "Helvetica"    # 序号字体及大小
+    label_font_point: 12
+    comment_font_face: "Helvetica"  # 注字体及大小
+    comment_font_point: 16
+    # candidate_list_layout: stacked        # 候选项排列方向 stacked(默认) | linear
+    # text_orientation: horizontal          # 文字排列方向 horizontal(默认) | vertical
+    inline_preedit: true                    # 键入码（拼音）是否显示在键入位置 true | false
+    inline_candidate: false                 # 候选项（词句）是否显示在键入位置 true | false
+    translucency: false                     # 磨砂： true | false
+    mutual_exclusive: false                 # 色不叠加： true | false
+    border_height: 0                        # 外边框 高
+    border_width: 0                         # 外边框 宽
+    corner_radius: 10                       # 外边框 圆角半径
+    hilited_corner_radius: 0                # 选中框 圆角半径
+    surrounding_extra_expansion: 0          # 候选项背景相对大小？
+    shadow_size: 0                          # 阴影大小
+    line_spacing: 5                         # 行间距
+    base_offset: 0                          # 字基高
+    alpha: 1                                # 透明度，0~1
+    spacing: 10                             # 拼音与候选项之间的距离 （inline_preedit: false）
+    color_space: srgb                       # 色彩空间： srgb | display_p3
+    back_color: 0x545554                    # 底色
+    hilited_candidate_back_color: 0xE3E3E3  # 选中底色
+    label_color: 0xBBBBBB                   # 序号颜色
+    hilited_candidate_label_color: 0x4C4C4C # 选中序号颜色
+    candidate_text_color: 0xEEEEEE          # 文字颜色
+    hilited_candidate_text_color: 0x000000  # 选中文字颜色
+    comment_text_color: 0x808080            # 注颜色
+    hilited_comment_text_color: 0x808080    # 选中注颜色
+    text_color: 0x808080                    # 拼音颜色 （inline_preedit: false）
+    hilited_text_color: 0xEEEEEE            # 选中拼音颜色 （inline_preedit: false）
+    # candidate_back_color:                 # 候选项底色
+    # preedit_back_color:                   # 拼音底色 （inline_preedit: false）
+    # hilited_back_color:                   # 选中拼音底色 （inline_preedit: false）
+    # border_color:                         # 外边框颜色
+
+
+  # 下面是内置的皮肤 https://github.com/rime/squirrel/blob/master/data/squirrel.yaml
+
   native:
     name: 系統配色
 
@@ -220,7 +288,7 @@ preset_color_schemes:
   clean_white:
     name: 简约白／Clean White
     author: Chongyu Zhu <lembacon@gmail.com>, based on 搜狗「简约白」
-    horizontal: true
+    candidate_list_layout: linear
     candidate_format: '%c %@'
     corner_radius: 6
     border_height: 6
@@ -240,7 +308,7 @@ preset_color_schemes:
   apathy:
     name: 冷漠／Apathy
     author: LIANG Hai
-    horizontal: true  # 水平排列
+    candidate_list_layout: linear  # 水平排列
     inline_preedit: true #单行显示，false双行显示
     candidate_format: "%c\u2005%@\u2005"  # 编号 %c 和候选词 %@ 前后的空间
     corner_radius: 5  #候选条圆角
@@ -259,7 +327,7 @@ preset_color_schemes:
   dust:
     name: 浮尘／Dust
     author: Superoutman <asticosmo@gmail.com>
-    horizontal: true  # 水平排列
+    candidate_list_layout: linear  # 水平排列
     inline_preedit: true #单行显示，false双行显示
     candidate_format: "%c\u2005%@\u2005"  # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
     corner_radius: 2  #候选条圆角
@@ -284,7 +352,7 @@ preset_color_schemes:
   mojave_dark:
     name: 沙漠夜／Mojave Dark
     author: xiehuc <xiehuc@gmail.com>
-    horizontal: true                        # 水平排列
+    candidate_list_layout: linear           # 水平排列
     inline_preedit: true                    # 单行显示，false双行显示
     candidate_format: "%c\u2005%@"    # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
     corner_radius: 5                        # 候选条圆角
@@ -344,48 +412,3 @@ preset_color_schemes:
     hilited_candidate_label_color: 0xCC8947 #Lab 55 ,-10,-45
     hilited_comment_text_color: 0x289989    #Lab 60 ,-20, 65
     hilited_text_color: 0xBE706D            #Lab 50 , 15,-45
-
-app_options:
-  com.apple.Spotlight:
-    ascii_mode: true
-  com.alfredapp.Alfred:
-    ascii_mode: true
-  com.runningwithcrayons.Alfred-2:
-    ascii_mode: true
-  com.blacktree.Quicksilver:
-    ascii_mode: true
-  com.apple.Terminal:
-    ascii_mode: true
-    no_inline: true
-  com.googlecode.iterm2:
-    ascii_mode: true
-    no_inline: true
-  org.vim.MacVim:
-    ascii_mode: true  # 初始爲西文模式
-    no_inline: true   # 不使用行內編輯
-    vim_mode: true    # 退出VIM插入模式自動切換輸入法狀態
-  com.apple.dt.Xcode:
-    ascii_mode: true
-  com.barebones.textwrangler:
-    ascii_mode: true
-  com.macromates.TextMate.preview:
-    ascii_mode: true
-  com.github.atom:
-    ascii_mode: true
-  com.microsoft.VSCode:
-    ascii_mode: true
-  com.sublimetext.2:
-    ascii_mode: true
-  org.gnu.Aquamacs:
-    ascii_mode: true
-  org.gnu.Emacs:
-    ascii_mode: true
-    no_inline: true
-  co.zeit.hyper:
-    ascii_mode: true
-  com.google.Chrome:
-    # 規避 https://github.com/rime/squirrel/issues/435
-    inline: true
-  ru.keepcoder.Telegram:
-    # 規避 https://github.com/rime/squirrel/issues/475
-    inline: true
