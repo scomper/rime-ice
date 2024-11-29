@@ -12,7 +12,10 @@ patch:
       text_orientation: horizontal            # horizontal | vertical
       border_height: 0                        # 窗口边界高度，大于圆角半径才生效
       border_width: 0                         # 窗口边界宽度，大于圆角半径才生效
-      candidate_format: "%c\u2005%@ \u2005"   # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
+      candidate_format: '[label]. [candidate] [comment]'   # 候选项格式化
+      # [label] 是标签，通常是候选词的编号或分类信息。
+      # [candidate] 是候选词本身。
+      # [comment] 是注释信息，比如拼音或相关提示。
       corner_radius: 6                        # 候选条圆角
       hilited_corner_radius: 4                # 高亮圆角
       inline_preedit: true                    # 单行显示，false双行显示
@@ -20,6 +23,7 @@ patch:
       font_face: "思源黑体"                    # 候选词字体
       font_point: 16                          # 候选字词大小
       label_font_point: 14                    # 候选编号大小
+      show_paging: true                       # 显示翻页按钮
   preset_color_schemes:
     Dawn:
       name: "晨曦／Dawn"
