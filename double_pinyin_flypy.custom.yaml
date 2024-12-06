@@ -2,58 +2,9 @@ patch:
 # Rime schema
 # encoding: utf-8
 # double_pinyin_flypy.custom.yaml
-  # 在 engine/filters 插入长词优先的 Lua
-  engine/filters:
-    - lua_filter@corrector
-    - reverse_lookup_filter@radical_reverse_lookup
-    - lua_filter@search@radical_pinyin
-    - lua_filter@autocap_filter
-    - lua_filter@pin_cand_filter
-    - lua_filter@long_word_filter  # 增加长词优先
-    - simplifier@emoji
-    - simplifier@traditionalize
-    - lua_filter@reduce_english_filter
-    - uniquifier
-
-  # 长词优先设置为提升 10 个词到第 1 个位置
-  #long_word_filter:
-  #  count: 10
-  #  idx: 1
 
   # 双拼不转换为全拼编码
   translator/preedit_format: []
-
-  # xform 变形改为 derive 派生
-  speller/algebra:
-    - derive/^([jqxy])u$/$1v/
-    - derive/^([aoe])([ioun])$/$1$1$2/
-    - derive/^([aoe])(ng)?$/$1$1$2/
-    - derive/iu$/Ⓠ/
-    - derive/(.)ei$/$1Ⓦ/
-    - derive/uan$/Ⓡ/
-    - derive/[uv]e$/Ⓣ/
-    - derive/un$/Ⓨ/
-    - derive/^sh/Ⓤ/
-    - derive/^ch/Ⓘ/
-    - derive/^zh/Ⓥ/
-    - derive/uo$/Ⓞ/
-    - derive/ie$/Ⓟ/
-    - derive/(.)i?ong$/$1Ⓢ/
-    - derive/ing$|uai$/Ⓚ/
-    - derive/(.)ai$/$1Ⓓ/
-    - derive/(.)en$/$1Ⓕ/
-    - derive/(.)eng$/$1Ⓖ/
-    - derive/[iu]ang$/Ⓛ/
-    - derive/(.)ang$/$1Ⓗ/
-    - derive/ian$/Ⓜ/
-    - derive/(.)an$/$1Ⓙ/
-    - derive/(.)ou$/$1Ⓩ/
-    - derive/[iu]a$/Ⓧ/
-    - derive/iao$/Ⓝ/
-    - derive/(.)ao$/$1Ⓒ/
-    - derive/ui$/Ⓥ/
-    - derive/in$/Ⓑ/
-    - xlit/ⓆⓌⓇⓉⓎⓊⒾⓄⓅⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwrtyuiopsdfghjklzxcvbnm/
 
 # 标点符号自定义
   punctuator/half_shape:
