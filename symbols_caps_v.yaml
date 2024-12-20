@@ -5,7 +5,7 @@
 # 同 symbols_v.yaml，前缀 v 改成大写 V
 # 因为全拼中没有 v 开头的拼写，双拼中 v+部分字母 是正常拼写，有冲突，所以改成了大写的 V 开头
 #
-# version: 2023-04-11
+# version: 2024-12-19
 
 symbols:
 #符号、电脑
@@ -250,7 +250,7 @@ symbols:
   # 中文标点符号表，来自 https://www.w3.org/TR/clreq/#tables_of_chinese_punctuation_marks
   # 将点号、非夹注、夹注、行间四个类别放在不同的列表中
   'Vdh': [。, ．, ，, 、, ：, ；, ！, ‼, ？, ⁇]
-  'Vfjz': [ ⸺, ——, ……, ⋯⋯, ～, -, –, —, ·, ・, ‧, /, ／ ]
+  'Vfjz': [ ⸺, ——, ……, ⋯⋯, ～, '-', –, —, ·, ・, ‧, /, ／ ]
   'Vjz': [「, 」, 『, 』, “, ”, ‘, ’, （, ）, 《, 》, 〈, 〉, 【, 】, 〖, 〗, 〔, 〕, ［, ］, ｛, ｝]
   'Vhj': [＿, ﹏, ●, •]
   # Unicode General Punctuation https://www.unicode.org/charts/PDF/U2000.pdf
