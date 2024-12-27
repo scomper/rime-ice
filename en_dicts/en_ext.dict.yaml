@@ -5,7 +5,7 @@
 # ------- 补充的英文词汇 -------
 ---
 name: en_ext
-version: "2024-12-19"
+version: "2024-12-27"
 sort: by_weight
 ...
 # 一些杂项
@@ -304,6 +304,9 @@ Chief Operating Officer	COO
 Chief Operating Officer	ChiefOperatingOfficer
 iShot	iShot
 TapTap	TapTap
+HDD	HDD
+Hard disk drive	HDD
+Hard disk drive	Harddiskdrive
 HHD	HHD
 Hybrid drive	HHD
 Hybrid drive	Hybriddrive
@@ -400,7 +403,6 @@ International Data Corporation	IDC
 International Data Corporation	InternationalDataCorporation
 Wunderlist	Wunderlist
 VMware	VMware
-Fusion	Fusion
 Flyme	Flyme
 VMware Fusion	VMwareFusion
 VMware Fusion Player	VMwareFusionPlayer
@@ -444,7 +446,6 @@ IntelliJ IDEA Community	IntelliJIDEACommunity
 IntelliJ IDEA Ultimate	IntelliJIDEAUltimate
 IDEA Community	IDEACommunity
 IDEA Ultimate	IDEAUltimate
-IDE	IDE
 NTR	NTR
 Notion	Notion
 Notion AI	NotionAI
@@ -470,7 +471,6 @@ Apple Music	AppleMusic
 TED	TED
 DeepL	DeepL
 Homebrew	Homebrew
-Finder	Finder
 VMess	VMess
 Shadowsocks	Shadowsocks
 PC	PC
@@ -724,6 +724,8 @@ Instacast	Instacast
 Instashare	Instashare
 Intensify	Intensify
 IP	IP
+internet protocol	IP
+internet protocol	internetprotocol
 iPack	iPack
 iPad Air	iPadAir
 iPad mini	iPadmini
@@ -1184,11 +1186,6 @@ New Technology File System	NewTechnologyFileSystem
 Microsoft NTFS	NTFS
 Microsoft NTFS	MicrosoftNTFS
 ChromeOS	ChromeOS
-GCD	GCD
-Grand Central Dispatch	GCD
-Grand Central Dispatch	GrandCentralDispatch
-greatest common divisor	GCD
-greatest common divisor	Greatestcommondivisor
 Ed Sheeran	EdSheeran
 Sheeran	Sheeran
 Cloudflare Images	CloudflareImages
@@ -1341,7 +1338,6 @@ Software Freedom Conservancy	SFC
 Software Freedom Conservancy	SoftwareFreedomConservancy
 PopCap	PopCap
 PopCap Games	PopCapGames
-Cyberpunk	Cyberpunk
 Kotlin	Kotlin
 PhpStorm	PhpStorm
 Datalore	Datalore
@@ -2152,3 +2148,21 @@ LGTM	LGTM
 PTAL	PTAL
 GPT-4o	GPT-4o
 Grok	Grok
+MBR	MBR
+master boot record	masterbootrecord
+master boot record	MBR
+EFI	EFI
+Extensible Firmware Interface	ExtensibleFirmwareInterface
+Extensible Firmware Interface	EFI
+UEFI	UEFI
+Unified Extensible Firmware Interface	UnifiedExtensibleFirmwareInterface
+Unified Extensible Firmware Interface	UEFI
+CMOS	CMOS
+complementary metal-oxide-semiconductor	complementarymetal-oxide-semiconductor
+complementary metal-oxide-semiconductor	CMOS
+OOP	OOP
+object-oriented programming	object-orientedprogramming
+object-oriented programming	OOP
+IDE	IDE
+integrated development environment	integrateddevelopmentenvironment
+integrated development environment	IDE
