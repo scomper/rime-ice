@@ -356,14 +356,3 @@ speller:
     - xlit/ⓆⓌⓇⓉⓎⓊⒾⓄⓅⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwrtyuiopsdfghjklzxcvbnm/
     # - abbrev/^(.).+$/$1/  # 首字母简拼，开启后会导致 3 个字母时 kj'x 变成 k'jx 的问题
 
-# 语言模型
-__include: octagram   #启用语言模型
-octagram:
-  __patch:
-    grammar:
-      language: amz-v3n3m1-zh-hans
-      collocation_max_length: 5
-      collocation_min_length: 2
-    translator/contextual_suggestions: true
-    translator/max_homophones: 7
-    translator/max_homographs: 7
