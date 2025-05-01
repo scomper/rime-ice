@@ -41,7 +41,7 @@ switcher:
     - emoji
     - full_shape
     - search_single_char
-  fold_options: true            # 呼出时是否折叠，多方案时建议折叠 true ，一个方案建议展开 false
+  fold_options: true            # 呼出时是否折叠，多方案时建议折叠 true，一个方案建议展开 false
   abbreviate_options: true      # 折叠时是否缩写选项
   option_list_separator: ' / '  # 折叠时的选项分隔符
 
@@ -275,18 +275,18 @@ key_binder:
 # Next、Page_Down	下翻
 # End	末位
 # Begin	始位
-# Shift_L	左Shift
-# Shift_R	右Shift
-# Control_L	左Ctrl
-# Control_R	右Ctrl
-# Meta_L	左Meta
-# Meta_R	右Meta
-# Alt_L	左Alt
-# Alt_R	右Alt
-# Super_L	左Super
-# Super_R	右Super
-# Hyper_L	左Hyper
-# Hyper_R	右Hyper
+# Shift_L	左 Shift
+# Shift_R	右 Shift
+# Control_L	左 Ctrl
+# Control_R	右 Ctrl
+# Meta_L	左 Meta
+# Meta_R	右 Meta
+# Alt_L	左 Alt
+# Alt_R	右 Alt
+# Super_L	左 Super
+# Super_R	右 Super
+# Hyper_L	左 Hyper
+# Hyper_R	右 Hyper
 # Caps_Lock	大写锁
 # Shift_Lock	上档锁
 # Scroll_Lock	滚动锁
@@ -355,13 +355,13 @@ key_binder:
 # KP_Subtract	小键板减号
 # KP_Divide	小键板除号
 # KP_Decimal	小键板小数点
-# KP_0	小键板0
-# KP_1	小键板1
-# KP_2	小键板2
-# KP_3	小键板3
-# KP_4	小键板4
-# KP_5	小键板5
-# KP_6	小键板6
-# KP_7	小键板7
-# KP_8	小键板8
-# KP_9	小键板9
+# KP_0	小键板 0
+# KP_1	小键板 1
+# KP_2	小键板 2
+# KP_3	小键板 3
+# KP_4	小键板 4
+# KP_5	小键板 5
+# KP_6	小键板 6
+# KP_7	小键板 7
+# KP_8	小键板 8
+# KP_9	小键板 9
