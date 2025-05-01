@@ -1,11 +1,11 @@
 # Rime schema
 # encoding: utf-8
 
-# 复制自 rime_ice.schema.yaml ，适配了双拼。
+# 复制自 rime_ice.schema.yaml，适配了双拼。
 # 双拼键位映射复制自 https://github.com/rime/rime-double-pinyin
 # 双拼之间主要就是 speller/algebra 和 translator/preedit_format 这里有区别。
 #
-# 全拼的自定义文本和双拼有些冲突，改成了 custom_phrase_double ，需要创建 custom_phrase_double.txt 文件。
+# 全拼的自定义文本和双拼有些冲突，改成了 custom_phrase_double，需要创建 custom_phrase_double.txt 文件。
 #
 # 目前配置中有个别功能仍然是全拼拼写，不能自动适配，所以需要手动修改一下：
 # - 英文中部分符号的派生规则：在英文方案文件 melt_eng.schema.yaml > speller > algebra 修改为对应的双拼拼写运算
@@ -34,19 +34,19 @@ schema:
 # abbrev: 默认的缩写取 states 的第一个字符，abbrev 可自定义一个字符
 switches:
   - name: ascii_mode
-    states: [ 中, Ａ ]
+    states: [ 中，A ]
   - name: ascii_punct  # 中英标点
     states: [ ¥, $ ]
   - name: traditionalization
-    states: [ 简, 繁 ]
+    states: [ 简，繁 ]
   - name: emoji
     states: [ 💀, 😄 ]
     reset: 1
   - name: full_shape
-    states: [ 半角, 全角 ]
+    states: [ 半角，全角 ]
   - name: search_single_char  # search.lua 的功能开关，辅码查词时是否单字优先
-    states: [正常, 单字]
-    abbrev: [词, 单]
+    states: [正常，单字]
+    abbrev: [词，单]
 
 
 # 输入引擎
@@ -95,21 +95,21 @@ engine:
 
 # Lua 配置: 日期、时间、星期、ISO 8601、时间戳的触发关键字
 date_translator:
-  date: date            # 日期： 2022-11-29
-  time: time            # 时间： 18:13
-  week: week            # 星期： 星期二
-  datetime: datetime    # ISO 8601： 2022-11-29T18:13:11+08:00
-  timestamp: timestamp  # 时间戳： 1669716794
+  date: date            # 日期：2022-11-29
+  time: time            # 时间：18:13
+  week: week            # 星期：星期二
+  datetime: datetime    # ISO 8601: 2022-11-29T18:13:11+08:00
+  timestamp: timestamp  # 时间戳：1669716794
 
 
 # Lua 配置：农历的触发关键字
-lunar: lunar  # 农历： 二〇二三年冬月二十 癸卯年（兔）冬月二十
+lunar: lunar  # 农历：二〇二三年冬月二十 癸卯年（兔）冬月二十
 
 
 # Lua 配置: 降低部分英语单词在候选项的位置。
 # 详细介绍 https://dvel.me/posts/make-rime-en-better/#短单词置顶的问题
-# 正常情况： 输入 rug 得到 「1.rug 2.如果 …… 」
-# 降低之后： 输入 rug 得到 「1.如果 2.rug …… 」
+# 正常情况：输入 rug 得到「1.rug 2.如果 …… 」
+# 降低之后：输入 rug 得到「1.如果 2.rug …… 」
 # 几种模式：
 # all     降低脚本内置的单词（所有 3~4 位长度、前 2~3 位是完整拼音、最后一位是声母），words 作为自定义的额外补充
 # custom  完全自定义，只降低 words 里的
@@ -145,7 +145,7 @@ reduce_english_filter:
 # Lua 配置: 置顶候选项
 # 注释太长了，请参考 pin_cand_filter.lua 开头的说明书。
 pin_cand_filter:
-  # 格式：编码<Tab>字词1<Space>字词2……
+  # 格式：编码<Tab>字词 1<Space>字词 2……
   - d	的
 
 
@@ -154,13 +154,13 @@ translator:
   dictionary: rime_ice          # 挂载词库 rime_ice.dict.yaml
   enable_word_completion: true  # 大于 4 音节的词条自动补全，librime > 1.11.2
   prism: double_pinyin_flypy    # 多方案共用一个词库时，为避免冲突，需要用 prism 指定一个名字。
-  spelling_hints: 8             # corrector.lua ：为了让错音错字提示的 Lua 同时适配全拼双拼，将拼音显示在 comment 中
-  always_show_comments: true    # corrector.lua ：Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供 corrector.lua 做判断用。
+  spelling_hints: 8             # corrector.lua：为了让错音错字提示的 Lua 同时适配全拼双拼，将拼音显示在 comment 中
+  always_show_comments: true    # corrector.lua：Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供 corrector.lua 做判断用。
   initial_quality: 1.2          # 拼音的权重应该比英文大
   comment_format:               # 标记拼音注释，供 corrector.lua 做判断用
     - xform/^/［/
     - xform/$/］/
-  preedit_format:               # preedit_format 影响到输入框的显示和“Shift+回车”上屏的字符
+  preedit_format:               # preedit_format 影响到输入框的显示和“Shift+ 回车”上屏的字符
     - xform/(^|[ '])aa/$1a/
     - xform/(^|[ '])ee/$1e/
     - xform/(^|[ '])oo/$1o/
@@ -242,8 +242,8 @@ emoji:
 # 简繁切换
 traditionalize:
   option_name: traditionalization  # 对应 switches 中的 name
-  opencc_config: s2t.json          # s2t.json | s2hk.json | s2tw.json | s2twp.json （Rime 内置配置，在程序目录可找到）
-  tips: none                       # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  opencc_config: s2t.json          # s2t.json | s2hk.json | s2tw.json | s2twp.json（Rime 内置配置，在程序目录可找到）
+  tips: none                       # 转换提示：all 都显示 | char 仅单字显示 | none 不显示。
   tags: [ abc, number, gregorian_to_lunar ]  # 限制在对应 tag，不对其他如反查的内容做简繁转换
 
 
@@ -308,12 +308,12 @@ editor:
   bindings:
     space: confirm                        # 空格键：上屏候选项
     Return: commit_raw_input              # 回车键：上屏原始输入
-    Control+Return: commit_script_text    # Ctrl+回车键：上屏变换后输入（经过 preedit_format 转换的）
-    Control+Shift+Return: commit_comment  # Ctrl+Shift+回车键：上屏 comment
+    Control+Return: commit_script_text    # Ctrl+ 回车键：上屏变换后输入（经过 preedit_format 转换的）
+    Control+Shift+Return: commit_comment  # Ctrl+Shift+ 回车键：上屏 comment
     BackSpace: revert                     # 退格键：向前删除（撤消上次输入）
     Delete: delete                        # Delete 键：向后删除
-    Control+BackSpace: back_syllable      # Ctrl+退格键：删除一个音节
-    Control+Delete: delete_candidate      # Ctrl+Delete键：删除或降权候选项
+    Control+BackSpace: back_syllable      # Ctrl+ 退格键：删除一个音节
+    Control+Delete: delete_candidate      # Ctrl+Delete 键：删除或降权候选项
     Escape: cancel                        # Esc 键：取消输入
 
 
@@ -328,6 +328,12 @@ speller:
     - erase/^xx$/
     - derive/^([jqxy])u$/$1v/
     - derive/^([aoe])([ioun])$/$1$1$2/
+    - derive/([ei])n$/$1ng/
+    - derive/([ei])ng$/$1n/
+    - derive/uan$/uang/
+    - derive/uang$/uan/
+    - derive/^([^aeiou]?h?)ang$/$1an/
+    - derive/^([^aeiou]?h?)an$/$1ang/
     - xform/^([aoe])(ng)?$/$1$1$2/
     - xform/iu$/Ⓠ/
     - xform/(.)ei$/$1Ⓦ/
