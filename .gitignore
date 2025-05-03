@@ -1,6 +1,7 @@
 .DS_Store
 **/.idea/
 .vscode/
+amz-v2n3m1-zh-hans.gram
 
 build/
 sync/
