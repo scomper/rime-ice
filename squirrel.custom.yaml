@@ -61,3 +61,4 @@ patch:
   "app_options/com.runningwithcrayons.Alfred/ascii_mode": true
   "app_options/com.coteditor.CotEditor/ascii_mode": true
   "app_options/com.mitchellh.ghostty/ascii_mode": true
+  "app_options/com.lemonmojo.RoyalTSX.App/ascii_mode": true
