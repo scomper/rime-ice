@@ -1487,9 +1487,11 @@ n次幂	n次幂 ⁿ
 垂直	垂直 ⟂
 lambda演算	lambda演算 λ演算
 ----------单位	----------
+平方毫米	平方毫米 mm²
 平方厘米	平方厘米 cm²
 平方分米	平方分米 dm²
 平方米	平方米 m²
+立方毫米	立方毫米 mm³
 立方厘米	立方厘米 cm³
 立方分米	立方分米 dm³
 立方米	立方米 m³
@@ -1502,11 +1504,17 @@ lambda演算	lambda演算 λ演算
 皮秒	皮秒 ps picosecond
 飞秒	飞秒 fs femtosecond
 阿秒	阿秒 as attosecond
+分米	分米 dm decimeter
+厘米	厘米 cm centimeter
 毫米	毫米 mm millimeter
 微米	微米 μm micrometer
 纳米	纳米 nm nanometer
 英寸	英寸 吋
 千瓦	千瓦 瓩
+千帕	千帕 kPa
+兆帕	兆帕 MPa N/mm²
+牛米	牛米 N⋅m
+千牛米	千牛米 kN⋅m
 ----------笔画标点	----------
 点	点 · 丶
 横	横 一
