@@ -3,7 +3,7 @@
 
 
 # 要比共享目录的同名文件的 config_version 大才可以生效
-config_version: '2025-02-24'
+config_version: '2026-01-26'
 
 
 # 方案列表
@@ -23,7 +23,7 @@ schema_list:
 
 # 菜单
 menu:
-  page_size: 7  # 候选词个数
+  page_size: 5  # 候选词个数
   # alternative_select_labels: [ ①, ②, ③, ④, ⑤, ⑥, ⑦, ⑧, ⑨, ⑩ ]  # 修改候选项标签
   # alternative_select_keys: ASDFGHJKL  # 如编码字符占用数字键，则需另设选字键（注意在雾凇中，大写字母也作为编码了）
 
@@ -88,7 +88,6 @@ ascii_composer:
 #   half_shape: 标点符号全部直接上屏，和 macOS 自带输入法的区别是
 #              '|' 是半角的，
 #              '~' 是半角的，
-#              '`'（反引号）没有改成 '·'（间隔号）。
 punctuator:
   digit_separators: ",.:"  # 在此处指定的字符，在数字后被输入，若再次输入数字，则连同数字直接上屏；若双击，则恢复映射。 # librime >= 1.13.0
   # digit_separator_action: commit  # 关闭上述行为 librime >= 1.13.1
@@ -139,7 +138,7 @@ punctuator:
     '"' : { pair: [ '“', '”' ] }
     '\' : '、'
     '|' : '|'
-    '`' : '`'
+    '`' : '·'
     '~' : '~'
     '!' : '！'
     '@' : '@'
