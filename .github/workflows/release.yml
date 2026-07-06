@@ -16,7 +16,7 @@ on:
 jobs:
   release:
     name: Test and Release
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     if: github.repository == 'iDvel/rime-ice'
 
     permissions:
@@ -30,35 +30,33 @@ jobs:
       - name: Install lint dependencies
         run: |
           echo "Install lint dependencies..."
-          python3 -m pip install yamllint
-          sudo apt install -y luarocks
+          sudo apt install -y lua5.5 luarocks yamllint
           sudo luarocks install luacheck
 
       - name: Cache rime cli bundle
         uses: actions/cache@v5
         with:
-          path: ${{ runner.temp }}/rime-cli-cache/rime-cli-linux-1.6.1.zip
-          key: rime-cli-linux-1.6.1
+          path: ${{ runner.temp }}/rime-cli-cache/rime-cli.zip
+          key: rime-cli
 
-      - name: Run lint
+      - name: Lint yaml and lua
         run: make -C others/script lint
 
-      - name: Run smoke test suite
+      - name: Compile and test
         env:
-          RIME_CLI_URL: https://github.com/mirtlecn/public/releases/download/v1.6.1/rime-cli-linux-1.6.1.zip
-          RIME_CLI_CACHE_PATH: ${{ runner.temp }}/rime-cli-cache/rime-cli-linux-1.6.1.zip
+          RIME_CLI_URL: https://github.com/iDvel/rime-ice/releases/download/tools/rime-1.17.0-lua-5.4-cli-linux-x86_64.zip
+          RIME_CLI_CACHE_PATH: ${{ runner.temp }}/rime-cli-cache/rime-cli.zip
         run: make -C others/script smoke
 
-      # build
       - name: Setup Go
-        if: ${{ contains(github.event.head_commit.message, ' [build]') || github.event_name == 'workflow_dispatch' }}
+        if: ${{ contains(github.event.head_commit.message, ' [build]') }}
         uses: actions/setup-go@v5
         with:
           go-version: 1.22
 
       - name: Check and build
         id: check_and_build
-        if: ${{ contains(github.event.head_commit.message, ' [build]') || github.event_name == 'workflow_dispatch' }}
+        if: ${{ contains(github.event.head_commit.message, ' [build]') }}
         run: |
           cd others/script
           go mod tidy
@@ -69,7 +67,7 @@ jobs:
           rm -rf dist
           mkdir dist
           echo "Pack all ..."
-          find . -maxdepth 1 -name "*.lua" -o -name "*.yaml" -o -name "*.txt" | zip dist/full.zip -@
+          find . -maxdepth 1 -name "*.lua" -o -name "*.yaml" -o -name "*.txt" | grep -v -E "(recipe|installation|user)\.yaml" | zip dist/full.zip -@
           zip -r dist/full.zip cn_dicts en_dicts lua opencc LICENSE
           echo "Pack dicts ..."
           zip -r dist/all_dicts.zip cn_dicts en_dicts opencc radical_pinyin.dict.yaml
@@ -79,8 +77,11 @@ jobs:
           zip -r dist/en_dicts.zip en_dicts
           echo "Pack opencc ..."
           zip -r dist/opencc.zip opencc
-          echo "Pack binary for fcitx5.js ..."
+          echo "Pack compiled binary for fcitx5.js ..."
           zip -r dist/fcitx5_rime_js-rime_ice.zip build lua opencc custom_phrase.txt
+          echo "Pack full compiled ..."
+          find . -maxdepth 1 -name "*.lua" -o -name "*.yaml" -o -name "*.txt" | grep -v -E "(recipe|installation|user)\.yaml" | zip dist/full_compiled.zip -@
+          zip -r dist/full_compiled.zip build lua opencc custom_phrase.txt cn_dicts en_dicts LICENSE
 
       - name: Create nightly release
         if: ${{ github.ref == 'refs/heads/main' }}
@@ -97,6 +98,7 @@ jobs:
             - `opencc.zip`：opencc 词库（emoji 等）
             - `all_dicts.zip`：以上三个词库的整合
             - `fcitx5_rime_js-rime_ice.zip`：适用于 fcitx5-rime.js 的预构建包
+            - `full_compiled.zip`：所有词典和方案的预构建包
 
           tag_name: nightly
           preserve_order: true
@@ -109,6 +111,7 @@ jobs:
             dist/en_dicts.zip
             dist/opencc.zip
             dist/fcitx5_rime_js-rime_ice.zip
+            dist/full_compiled.zip
 
       - name: Create stable release
         if: startsWith(github.ref, 'refs/tags/')
@@ -127,6 +130,7 @@ jobs:
             - `opencc.zip`：opencc 词库（emoji 等）
             - `all_dicts.zip`：以上三个词库的整合
             - `fcitx5_rime_js-rime_ice.zip`：适用于 fcitx5-rime.js 的预构建包
+            - `full_compiled.zip`：所有词典和方案的预构建包
 
           draft: true
           preserve_order: true
@@ -138,9 +142,11 @@ jobs:
             dist/en_dicts.zip
             dist/opencc.zip
             dist/fcitx5_rime_js-rime_ice.zip
+            dist/full_compiled.zip
 
       - name: Push and commit
-        if: ${{ steps.check_and_build.outcome == 'success' }}
+        # if: ${{ steps.check_and_build.outcome == 'success' }}
+        if: false # Disable auto commit for now
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
