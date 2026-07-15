@@ -14,14 +14,14 @@
 
 到 Rime [官网](https://rime.im/) 或 app 商店下载安装 Rime 输入法应用。然后：
 
-1. 下载 [雾凇拼音](https://github.com/iDvel/rime-ice/releases/latest/download/full.zip) 压缩包；
+1. 下载雾凇拼音压缩包：[GitHub 官方](https://github.com/iDvel/rime-ice/releases/latest/download/full.zip) | [大陆镜像加速](https://mirror.nju.edu.cn/github-release/iDvel/rime-ice/LatestRelease/full.zip)；
 2. **清空**输入法用户目录[^2]内的全部文件，再将压缩包内的所有文件复制进去；
 3. 重新部署。
 
 部署完成后就可以打字了。按 <kbd>F4</kbd> 可以切换输入方案或开关各项功能。重做以上三步可以更新/还原雾凇拼音。
 
 <details>
-<summary>雾凇拼音也支持命令行自动安装、打补丁和配置语法模型。</summary>
+<summary>有技术背景的用户，推荐使用命令行。支持自动打补丁并配置语法模型。</summary>
 
 ```bash
 # 需要安装 git 及 bash
